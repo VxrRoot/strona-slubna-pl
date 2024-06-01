@@ -24,7 +24,7 @@ const itemMotion = {
 };
 const itemMotionDesktop = {
   visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 1, x: 0 },
+  hidden: { opacity: 1, x: "-100%" },
 };
 const navLinks = [
   { name: "O nas", href: "/o-nas", id: 1 },
