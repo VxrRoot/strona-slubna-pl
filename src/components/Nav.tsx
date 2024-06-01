@@ -23,8 +23,8 @@ const itemMotion = {
   hidden: { opacity: 0, x: -100 },
 };
 const itemMotionDesktop = {
-  visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 1, x: "-100%" },
+  visible: { opacity: 1, x: 0, display: "flex" },
+  hidden: { opacity: 1, x: "-100%", display: "none" },
 };
 const navLinks = [
   { name: "O nas", href: "/o-nas", id: 1 },
@@ -93,12 +93,11 @@ export default function Nav() {
         <motion.span
           animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
           className="line-1 bg-primary block h-0.5 w-8 bg-content"
-        ></motion.span>
-
+        />
         <motion.span
           animate={{ width: toggled ? 0 : 24 }}
           className="line-2 bg-primary block h-0.5 w-6 bg-content"
-        ></motion.span>
+        />
         <motion.span
           animate={{
             rotateZ: toggled ? -45 : 0,
@@ -106,7 +105,7 @@ export default function Nav() {
             width: toggled ? 32 : 24,
           }}
           className="line-3 bg-primary block h-0.5 w-4 bg-content"
-        ></motion.span>
+        />
       </motion.div>
     </nav>
   );
