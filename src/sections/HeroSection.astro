@@ -1,0 +1,26 @@
+---
+import AstroContainer from "../components/AstroContainer.astro";
+import { FlipWords } from "../components/FlipWords";
+---
+
+<section
+  class="bg-cover min-h-screen bg-center bg-[url(/hero-img.webp)] flex flex-col justify-end items-cente"
+>
+  <div
+    class="flex flex-col items-center from-[#6C4E3F] to-white/1 py-16 bg-gradient-to-t"
+  >
+    <AstroContainer>
+      <h1 class="text-white text-center text-5xl lg:text-7xl">
+        <FlipWords word="My stworzymy dla was stronę" client:load />
+      </h1>
+      <p class="text-white lg:text-xl text-center mt-4">
+        <FlipWords
+          word="A wy cieszcie się chwilą i nie przejmujcie sie więcej pytaniami gości"
+          delay={1500}
+          animationDuration={0.04}
+          client:load
+        />
+      </p>
+    </AstroContainer>
+  </div>
+</section>

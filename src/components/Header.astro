@@ -1,0 +1,16 @@
+---
+import Logo from "../icons/Logo";
+import AstroContainer from "./AstroContainer.astro";
+import Nav from "./Nav";
+---
+
+<header class="absolute w-full flex justify-center py-4">
+  <AstroContainer>
+    <a href="/" class="absolute left-1/2 -translate-x-1/2">
+      <Logo />
+    </a>
+    <div class="absolute right-0 top-3">
+      <Nav client:load />
+    </div>
+  </AstroContainer>
+</header>
