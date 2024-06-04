@@ -56,7 +56,7 @@ export const FlipWords = ({
               delay: index * animationDuration,
               duration: 0.8,
             }}
-            className="inline-block whitespace-break-spaces"
+            className="inline-block whitespace-break-spaces text-white"
           >
             {letter === " " ? "\u00a0" : `${letter} `}
           </motion.span>

@@ -84,7 +84,7 @@ export default function Nav() {
       {/* Hamburger Toggle */}
       <motion.div
         animate={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: 25 }}
+        initial={{ opacity: 0, x: -25 }}
         transition={{ delay: 0.35 }}
         onClick={() => setToggled((prevToggle) => !prevToggle)}
         className={`burger z-50 cursor-pointer space-y-1.5 xl:hidden 
