@@ -45,7 +45,7 @@ const NavLinks = ({
         key={id}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
-        className="text-center text-primary text-cormorant text-xl flex justify-center items-center whitespace-nowrap border-b-2 border-transparent hover:border-primary transition-all"
+        className="text-center text-primary text-cormorant text-xl flex justify-center items-center whitespace-nowrap "
       >
         {name}
       </motion.a>
