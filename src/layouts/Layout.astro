@@ -2,6 +2,7 @@
 import "@fontsource/cormorant-upright";
 import "@fontsource-variable/montserrat";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -39,6 +40,7 @@ const {
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -53,6 +55,8 @@ const {
   body {
     overflow-x: hidden;
     font-family: "Montserrat Variable", sans-serif;
+    background-color: #faf6f3;
+    color: white;
   }
 
   h1,
