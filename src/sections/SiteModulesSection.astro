@@ -6,37 +6,37 @@ import Image from "astro/components/Image.astro";
 const modules = [
   {
     name: "Licznik",
-    desc: "Twoi goście będzią mogli zobaczyć ile jeszcze pozostało do uroczystości",
+    desc: "Licznik odlicza czas do wielkiego dnia, dodając emocji i budując napięcie przed zbliżającym się ślubem. Wyświetla dni, godziny, minuty i sekundy pozostałe do ceremonii",
     link: "/licznik",
     img: MediaIcon,
   },
   {
     name: "Przewodnik gościa",
-    desc: "Twoi goście będzią mogli zobaczyć ile jeszcze pozostało do uroczystości",
+    desc: "Kompleksowa sekcja zawierająca wszystkie niezbędne informacje dla uczestników ślubu.",
     link: "/licznik",
     img: MediaIcon,
   },
   {
     name: "Wiadomość do gości",
-    desc: "Twoi goście będzią mogli zobaczyć ile jeszcze pozostało do uroczystości",
+    desc: "Funkcja ta pozwala parze młodej na komunikowanie się ze swoimi gośćmi. Można zamieścić osobiste powitanie, podziękowania oraz wszelkie ważne aktualizacje dotyczące ślubu i przyjęcia",
     link: "/licznik",
     img: MediaIcon,
   },
   {
     name: "Lokalizacje",
-    desc: "Twoi goście będzią mogli zobaczyć ile jeszcze pozostało do uroczystości",
+    desc: "Szczegółowe informacje o wszystkich miejscach związanych ze ślubem i przyjęciem. Adresy, mapy, wskazówki dojazdu oraz opcje parkingowe są tutaj przedstawione w przejrzysty sposób, ułatwiając gościom dotarcie na czas",
     link: "/licznik",
     img: MediaIcon,
   },
   {
     name: "Zdjęcia",
-    desc: "Twoi goście będzią mogli zobaczyć ile jeszcze pozostało do uroczystości",
+    desc: "Jest to sekcja w której para młoda może dzielić się pięknymi zdjęciami z sesji narzeczeńskiej, zdjęciami z przygotowań do ślubu oraz innymi ważnymi momentami",
     link: "/licznik",
     img: MediaIcon,
   },
   {
     name: "Potwierdzenie przybycia",
-    desc: "Twoi goście będzią mogli ",
+    desc: "Umożliwia gościom łatwe i szybkie potwierdzenie ich obecności na ślubie. Goście mogą wypełnić prosty formularz online, co pomaga parze młodej w dokładnym zaplanowaniu uroczystości i przyjęcia ",
     link: "/licznik",
     img: MediaIcon,
   },
@@ -53,7 +53,7 @@ const modules = [
     >
       {
         modules.map((module) => (
-          <div class="border-2 h-full mx-auto border-primary rounded-t-full pt-32 pb-10 px-10 lg:px-20 max-w-[30rem] w-full flex flex-col text-primary justify-center gap-6 items-center">
+          <div class="border-2 h-full mx-auto border-primary rounded-t-full pt-32 pb-10 px-10 lg:px-10 max-w-[30rem] w-full flex flex-col text-primary justify-center gap-6 items-center">
             <MediaIcon />
             <p class="text-5xl text-cormorant  uppercase text-center">
               {module.name}
