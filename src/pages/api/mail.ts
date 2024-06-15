@@ -8,7 +8,7 @@ export const POST: APIRoute = async ({ request }) => {
   const message = data.get("message");
   const phone = data.get("phone");
 
-  const officeEmail = import.meta.env.SMTP_EMAIL;
+  const officeEmail = process.env.SMTP_EMAIL;
 
   // Validate the data - you'll probably want to do more than this
   if (!name || !email || !message) {
@@ -26,21 +26,21 @@ export const POST: APIRoute = async ({ request }) => {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: import.meta.env.SMTP_EMAIL,
-      pass: import.meta.env.SMTP_PASSWORD,
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASSWORD,
     },
     secure: true,
   });
   try {
     const inside = await transporter.sendMail({
-      from: import.meta.env.SMTP_EMAIL,
+      from: process.env.SMTP_EMAIL,
       to: officeEmail,
       subject: `Nowa wiadomość od - ${email} - strona-slubna.pl`,
       html: `name - ${name}, email - ${email}, message - ${message}, phone - ${phone}`,
     });
 
     const outside = await transporter.sendMail({
-      from: import.meta.env.SMTP_EMAIL,
+      from: process.env.SMTP_EMAIL,
       to: String(email),
       subject: "Dziękujemy za wiadomość! - strona-slubna.pl",
       html: `<html xmlns="http://www.w3.org/1999/xhtml">
