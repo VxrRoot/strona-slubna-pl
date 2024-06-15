@@ -1,47 +1,40 @@
-export const prerender = false;
-import type { APIRoute } from "astro";
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
-export const POST: APIRoute = async ({ request }) => {
+const prerender = false;
+const POST = async ({ request }) => {
   const data = await request.formData();
   const name = data.get("name");
   const email = data.get("email");
   const message = data.get("message");
   const phone = data.get("phone");
-
-  const officeEmail = process.env.SMTP_EMAIL;
-
-  // Validate the data - you'll probably want to do more than this
+  const officeEmail = "stronaslubna.kontakt@gmail.com";
   if (!name || !email || !message) {
     return new Response(
       JSON.stringify({
-        message: "Missing required fields",
+        message: "Missing required fields"
       }),
       { status: 400 }
     );
   }
-  // Do something with the data, then return a success response
-
   const transporter = nodemailer.createTransport({
     service: "gmail",
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: officeEmail,
-      pass: process.env.SMTP_PASSWORD,
+      user: "stronaslubna.kontakt@gmail.com",
+      pass: "esgoukiqmkinoocl"
     },
-    secure: true,
+    secure: true
   });
   try {
     const inside = await transporter.sendMail({
-      from: officeEmail,
+      from: "stronaslubna.kontakt@gmail.com",
       to: officeEmail,
       subject: `Nowa wiadomość od - ${email} - strona-slubna.pl`,
-      html: `name - ${name}, email - ${email}, message - ${message}, phone - ${phone}`,
+      html: `name - ${name}, email - ${email}, message - ${message}, phone - ${phone}`
     });
-
     const outside = await transporter.sendMail({
-      from: officeEmail,
+      from: "stronaslubna.kontakt@gmail.com",
       to: String(email),
       subject: "Dziękujemy za wiadomość! - strona-slubna.pl",
       html: `<html xmlns="http://www.w3.org/1999/xhtml">
@@ -194,14 +187,16 @@ export const POST: APIRoute = async ({ request }) => {
       </td></tr></table>
       
       </body>
-      </html>`,
+      </html>`
     });
-  } catch (err) {}
-
+  } catch (err) {
+  }
   return new Response(
     JSON.stringify({
-      message: "Success!",
+      message: "Success!"
     }),
     { status: 200 }
   );
 };
+
+export { POST, prerender };
