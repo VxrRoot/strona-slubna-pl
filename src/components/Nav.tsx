@@ -1,5 +1,3 @@
-import instagram from "../../public/icons/instagram.svg";
-import logo from "../../public/logo.webp";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import InstagramIcon from "../icons/InstagramIcon";

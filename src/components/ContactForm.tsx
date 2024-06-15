@@ -2,7 +2,6 @@ import { useState } from "react";
 import Spinner from "./Spinner";
 
 const ContactForm = () => {
-  const [responseMessage, setResponseMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const [errors, setErrors] = useState({
