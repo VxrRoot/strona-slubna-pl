@@ -51,10 +51,10 @@ const NavLinks = ({
       </motion.a>
     ))}
     <div className="flex gap-8">
-      <a href="https://www.instagram.com">
+      <a href="https://www.instagram.com/strona_slubna/">
         <InstagramIcon fill="#6c4e3f" />
       </a>
-      <a href="https://www.tiktok.com">
+      <a href="https://www.tiktok.com/@strona_slubna?lang=pl-PL">
         <TiktokIcon fill="#6c4e3f" />
       </a>
     </div>
@@ -64,7 +64,7 @@ const NavLinks = ({
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
   return (
-    <nav className="relative px-4  flex items-center justify-between  font-medium  max-w-[1440px] mx-auto">
+    <nav className="relative   flex items-center justify-between  font-medium  max-w-[1440px] mx-auto">
       <div className="hidden xl:flex xl:items-center  xl:justify-center xl:gap-12 xl:text-lg  xl:ml-auto ">
         <NavLinks className="flex gap-12" isMobile={false} />
       </div>

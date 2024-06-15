@@ -1,0 +1,43 @@
+---
+import AstroContainer from "../components/AstroContainer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  headerDark={true}
+  title="Dziękujemy za przesłanie formularza"
+  robots="noindex, nofollow"
+>
+  <main>
+    <section
+      class="bg-cover min-h-screen bg-center bg-[url(/thanks-hero.webp)] flex flex-col justify-end items-cente"
+    >
+      <div
+        class="flex flex-col items-center from-[#6C4E3F] to-white/1 pt-28 pb-10 bg-gradient-to-t"
+      >
+        <AstroContainer>
+          <h1 class="text-white text-center text-5xl lg:text-7xl pb-10">
+            Dziękujemy za wiadomość!
+          </h1>
+          <p class="text-center text-xl">
+            Sprawdzimy Twoją wiadomość i odezwiemy się jak najszybciej!
+          </p>
+          <div
+            class="flex justify-center py-8 gap-4 flex-col lg:flex-row items-center"
+          >
+            <a
+              href="/"
+              class="py-2 px-8 border-2 border-creme hover:bg-primary transition-all w-72 text-center"
+              >Strona główna</a
+            >
+            <a
+              href="/przykladowa-strona"
+              class="py-2 px-8 border-2 border-creme hover:bg-primary transition-all w-72 text-center"
+              >Przykładowa strona ślubna</a
+            >
+          </div>
+        </AstroContainer>
+      </div>
+    </section>
+  </main>
+</Layout>

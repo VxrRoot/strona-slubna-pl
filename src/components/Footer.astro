@@ -1,5 +1,42 @@
 ---
+import InstagramIcon from "../icons/InstagramIcon";
+import TiktokIcon from "../icons/TiktokIcon";
 import AstroContainer from "./AstroContainer.astro";
 ---
 
-<footer><AstroContainer>Footer</AstroContainer></footer>
+<footer class="bg-primary mt-auto py-10">
+  <AstroContainer>
+    <div class="flex flex-col">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 pb-8">
+        <div>
+          <div class="text-cormorant text-4xl">
+            Pozwól nam zrealizować Twoją wymarzoną stronę ślubną i uporządkować
+            Twoją uroczystość
+          </div>
+          <div class="flex gap-8 mt-8">
+            <a href="https://www.instagram.com/strona_slubna/">
+              <InstagramIcon fill="#FAF6F2" />
+            </a>
+            <a href="https://www.tiktok.com/@strona_slubna?lang=pl-PL">
+              <TiktokIcon fill="#FAF6F2" />
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="/">Strona główna</a>
+          <a href="/regulamin">Regulamin</a>
+          <a href="/polityka-prywatnosci">Polityka prywatności</a>
+        </div>
+      </div>
+      <div
+        class="border-t-2 border-creme pt-10 flex flex-col lg:flex-row justify-between"
+      >
+        <div>Copyright © 2024. Wszelkie prawa zastrzeżone</div>
+        <div>
+          Powered by:
+          <a target="_blank" href="https://www.web-nova.pl"> WebNova</a>
+        </div>
+      </div>
+    </div>
+  </AstroContainer>
+</footer>

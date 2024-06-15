@@ -8,14 +8,18 @@ interface Props {
   title: string;
   description?: string;
   keywords?: string;
+  robots?: string;
   url?: string;
+  headerDark?: boolean;
 }
 
 const {
   title,
   description = "",
   keywords,
+  robots = "index, follow",
   url = "https://www.strona-slubna.pl",
+  headerDark = false,
 } = Astro.props;
 ---
 
@@ -26,6 +30,7 @@ const {
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <meta name="keywords" content={keywords} />
+    <meta name="robots" content={robots} />
     <link rel="icon" type="image/svg+xml" href="/LOGO.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={url} />
@@ -38,7 +43,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <Header />
+    <Header bgDark={headerDark} />
     <slot />
     <Footer />
   </body>
@@ -46,6 +51,7 @@ const {
 <style is:global>
   :root {
     --primary: #6c4e3f;
+    --creme: #faf6f2;
   }
 
   html {
