@@ -73,16 +73,10 @@ const OpinionStack = ({
               <StarIcon />
               <StarIcon />
             </div>
-            <div className="font-normal text-neutral-700 dark:text-neutral-200">
-              {card.content}
-            </div>
+            <div className="font-normal text-creme">{card.content}</div>
             <div>
-              <p className="text-neutral-500 font-medium dark:text-white">
-                {card.name}
-              </p>
-              <p className="text-neutral-400 font-normal dark:text-neutral-200">
-                {card.designation}
-              </p>
+              <p className="text-creme font-medium ">{card.name}</p>
+              <p className="text-creme font-normal">{card.designation}</p>
             </div>
           </motion.div>
         );
