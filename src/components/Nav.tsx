@@ -25,22 +25,25 @@ const itemMotionDesktop = {
   hidden: { opacity: 1, x: "-100%", display: "none" },
 };
 const navLinks = [
-  { name: "O nas", href: "/o-nas", id: 1 },
-  { name: "Oferta", href: "/", id: 2 },
-  { name: "Kontakt", href: "/", id: 3 },
+  { name: "O nas", href: "/#o-nas", id: 1 },
+  { name: "Oferta", href: "/#oferta", id: 2 },
+  { name: "Kontakt", href: "/#kontakt", id: 3 },
 ];
 
 const NavLinks = ({
   isMobile,
+  onClick,
   className,
 }: {
   isMobile: boolean;
   className: string;
+  onClick?: () => void;
 }) => (
   <div className={className}>
     {navLinks.map(({ name, href, id }) => (
       <motion.a
         key={id}
+        onClick={onClick}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
         className="text-center text-primary text-cormorant text-xl flex justify-center items-center whitespace-nowrap "
@@ -75,7 +78,11 @@ export default function Nav() {
           className="fixed left-0 top-0  z-40 flex h-screen
           w-full flex-col items-center  justify-center  gap-24 bg-white text-2xl font-bold"
         >
-          <NavLinks className="flex flex-col gap-24 text-lg " isMobile={true} />
+          <NavLinks
+            onClick={() => setToggled((prev) => !prev)}
+            className="flex flex-col gap-24 text-lg "
+            isMobile={true}
+          />
         </motion.div>
       )}
 

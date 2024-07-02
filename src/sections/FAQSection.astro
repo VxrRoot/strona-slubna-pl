@@ -1,13 +1,13 @@
 ---
 import AstroContainer from "../components/AstroContainer.astro";
-import SiteModules from "../components/SiteModules";
+import FAQ from "../components/FAQ";
 ---
 
-<section class="my-24 lg:my-32">
+<section class="mt-32 mb-44">
   <AstroContainer>
     <h2 class="text-4xl lg:text-5xl text-primary">
-      Co znajdziesz na swojej stronie?
+      Najczęściej zadawane pytania
     </h2>
-    <SiteModules />
+    <FAQ client:load />
   </AstroContainer>
 </section>

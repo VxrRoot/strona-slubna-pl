@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GoogleIcon from "../icons/GoogleIcon";
 import StarIcon from "../icons/StarIcon";
+import { MoveLeft, MoveRight } from "lucide-react";
 
 let interval: any;
 
@@ -81,6 +82,24 @@ const OpinionStack = ({
           </motion.div>
         );
       })}
+      <div
+        className="cursor-pointer absolute bottom-[-50px] lg:bottom-[-120px] right-4"
+        onClick={() => {
+          changeCard();
+          clearInterval(interval);
+        }}
+      >
+        <MoveRight className="w-10 h-10 stroke-[#6c4e3f]" />
+      </div>
+      <div
+        className="cursor-pointer absolute bottom-[-50px] left-4 lg:bottom-[-120px]"
+        onClick={() => {
+          changeCard();
+          clearInterval(interval);
+        }}
+      >
+        <MoveLeft className="w-10 h-10 stroke-[#6c4e3f]" />
+      </div>
     </div>
   );
 };
