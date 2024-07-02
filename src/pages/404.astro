@@ -1,0 +1,23 @@
+---
+import AstroContainer from "../components/AstroContainer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Nie ma takiej strony">
+  <section
+    class="bg-cover min-h-screen bg-center bg-[url(/hero-img.webp)] flex flex-col justify-end items-cente"
+  >
+    <AstroContainer>
+      <div class="mb-32 flex flex-col justify-center items-center gap-4">
+        <p class="text-white text-5xl lg:text-7xl text-center text-cormorant">
+          Nie ma takiej strony
+        </p>
+        <a
+          href="/"
+          class="py-2 px-8 border-2 border-creme hover:bg-primary transition-all w-72 text-center"
+          >Strona główna</a
+        >
+      </div>
+    </AstroContainer>
+  </section>
+</Layout>
