@@ -1,0 +1,40 @@
+---
+import AstroContainer from "./AstroContainer.astro";
+---
+
+<footer class="text-primary py-16 footer">
+  <div class="flex justify-center mb-16">
+    <img src="flowers3.png" class="z-40" alt="" />
+  </div>
+  <AstroContainer>
+    <div
+      class="flex justify-between items-center flex-col gap-8 lg:flex-row text-lg"
+    >
+      <div class="flex gap-4">
+        <a href="">O nas</a>
+        <a href="">Jak dojechać?</a>
+        <a href=""></a>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <span class="font-black">Pan młody</span>
+        <a href="tel:+48123123123" class="lg:px-4 lg:border-r-2 text-center">
+          +48 123 456 789</a
+        >
+        <span class="font-black">Panna młoda</span>
+        <a href="tel:+48123123123" class="lg:px-4 lg:border-r-2 text-center">
+          +48 123 456 789</a
+        >
+      </div>
+    </div>
+    <div class="bg-primary w-full h-[1px] mt-8"></div>
+    <div class="text-center mt-8">
+      <a href="https://www.strona-slubna.pl/">Zrealizowane przez strona-slubna.pl</a>
+    </div>
+  </AstroContainer>
+</footer>
+
+<style lang="scss">
+  footer{
+    margin-top: -10rem;
+  }
+</style>

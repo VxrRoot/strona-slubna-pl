@@ -1,0 +1,67 @@
+<script>
+  (function () {
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, "0");
+    let mm = String(today.getMonth() + 1).padStart(2, "0");
+    let yyyy = today.getFullYear();
+    let nextYear = yyyy + 1;
+    const dayMonth = "09/30/";
+    let birthday = dayMonth + yyyy;
+
+    today = new Date(`${mm}/${dd}/${yyyy}`);
+    if (today.getTime() > new Date(birthday).getTime()) {
+      birthday = dayMonth + nextYear;
+    }
+
+    const countDown = new Date(birthday).getTime();
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countDown - now;
+
+      document.getElementById("days")!.innerText = Math.floor(
+        distance / day
+      ).toString();
+      document.getElementById("hours")!.innerText = Math.floor(
+        (distance % day) / hour
+      ).toString();
+      document.getElementById("minutes")!.innerText = Math.floor(
+        (distance % hour) / minute
+      ).toString();
+      document.getElementById("seconds")!.innerText = Math.floor(
+        (distance % minute) / second
+      ).toString();
+
+      if (distance < 0) {
+        document.getElementById("headline")!.innerText = "It's my birthday!";
+        document.getElementById("countdown")!.style.display = "none";
+        document.getElementById("content")!.style.display = "block";
+        clearInterval(x);
+      }
+    }, 0);
+  })();
+</script>
+
+  <div id="countdown w-100">
+    <div class="flex flex-row w-full gap-8 lg:gap-24 text-2xl lg:text-3xl text-white justify-center">
+      <div class="countdown__time"><span id="days" class="countdown__time__label text-5xl lg:text-6xl"></span>dni</div>
+      <div class="countdown__time"><span id="hours" class="countdown__time__label text-5xl lg:text-6xl"></span>godzin</div>
+      <div class="countdown__time"><span id="minutes" class="countdown__time__label text-5xl lg:text-6xl"></span>minut</div>
+      <div class="countdown__time"><span id="seconds" class="countdown__time__label text-5xl lg:text-6xl"></span>sekund</div>
+    </div>
+  </div>
+
+<style lang="scss">
+  .countdown {
+    &__time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+    }
+  }
+</style>

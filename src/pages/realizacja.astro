@@ -1,0 +1,116 @@
+---
+import "@fontsource/cormorant-upright/300.css";
+import "@fontsource/cormorant-upright/400.css";
+import "@fontsource/cormorant-upright/500.css";
+import "@fontsource/cormorant-upright/600.css";
+import "@fontsource/cormorant-upright/700.css";
+import "@fontsource/parisienne";
+import Footer from "../sections/realization/components/Footer.astro";
+import Loader from "../sections/realization/components/Loader.astro";
+import Nav from "../sections/realization/components/Nav";
+import ConfimSection from "../sections/realization/sections/ConfimSection.astro";
+import InfoSection from "../sections/realization/sections/InfoSection.astro";
+import LocalizationSection from "../sections/realization/sections/LocalizationSection.astro";
+import AboutSection from "../sections/realization/sections/About.astro";
+import HeroSection from "../sections/realization/sections/HeroSection.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Loader />
+    <Nav client:load />
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <LocalizationSection />
+      <InfoSection />
+      <ConfimSection />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --background: #faf6f2;
+    --background-dark: #f3eee7;
+    --dark-cream: #f3ede3;
+    --primary: #6c4e3f;
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+    overflow-x: hidden !important;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  .bottom-border {
+    border-color: var(--primary);
+    border-bottom: 1px solid;
+  }
+
+  body {
+    font-family: "Cormorant Upright", serif !important;
+    overflow-x: hidden !important;
+    background: var(--background);
+  }
+
+  .bg-dark-cream {
+    background-color: var(--dark-cream);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .bg-darker {
+    background-color: var(--background-dark);
+  }
+  .hand-written {
+    font-family: "Parisienne", cursive;
+  }
+
+  .border-primary {
+    border: 2px solid var(--primary);
+  }
+  strong {
+    font-weight: 700;
+  }
+</style>

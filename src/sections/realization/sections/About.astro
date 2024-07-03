@@ -1,0 +1,71 @@
+---
+import AstroContainer from "../components/AstroContainer.astro";
+import Countdown from "../components/Countdown.astro";
+import { FlipWords } from "../components/FlipWords";
+---
+
+<script></script>
+
+<section class="test about-section w-full mt-24 pb-32">
+  <AstroContainer>
+    <div class="relative w-full flex items-center flex-col">
+      <img src="flower2.svg" class="w-[16rem] -mt-[1rem]" alt="" srcset="" />
+      <div class="h-[5rem] w-[1px] bg-primary"></div>
+      <div>
+        <div class="text-xl uppercase mt-4">
+          <p class="text-3xl text-center">
+            Drodzy <strong> Goście</strong>,
+          </p>
+          <p class="mt-4">
+            Jest nam niezmiernie miło powitać Was na naszej stronie ślubnej,
+            która została stworzona z myślą o podzieleniu się z Wami wszystkimi
+            ważnymi <strong>informacjami</strong> dotyczącymi naszego wielkiego
+            dnia.
+          </p>
+          <p class="mt-4">
+            Z radością ogłaszamy, że powiedzieliśmy sobie <strong>
+              "Tak!"
+            </strong> i teraz z niecierpliwością oczekujemy dnia, w którym
+            będziemy mogli świętować naszą miłość w gronie rodziny i przyjaciół.
+            Mamy nadzieję, że ta strona <strong> pomoże Wam</strong> w
+            przygotowaniach do naszego wesela, dostarczając wszelkich
+            niezbędnych szczegółów, takich jak harmonogram uroczystości,
+            informacje o miejscu, wskazówki dojazdu oraz inne praktyczne porady.
+          </p>
+          <p class="mt-4">
+            <strong> Dziękujemy</strong>, że jesteście z nami w tym ważnym dla
+            nas czasie. Nie możemy się doczekać, aby zobaczyć Was na naszym
+            ślubie i wspólnie świętować ten niezapomniany dzień. Z serdecznymi
+            pozdrowieniami
+          </p>
+          <p class="hand-written normal-case text-3xl text-right">
+            Agnieszka i Tomek
+          </p>
+        </div>
+        <div class="min-w-[20rem]"></div>
+      </div>
+    </div>
+  </AstroContainer>
+</section>
+
+<style lang="scss">
+  .about-section {
+    overflow: visible;
+    border-radius: 50% 50% 50% 50% / 8% 7% 93% 92%;
+    position: relative;
+    width: 100vw;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 90rem;
+      min-width: 100vw;
+      left: 50%;
+      height: 40rem;
+      border-radius: 50%;
+      top: -1rem;
+      transform: scale(1.5) translateX(-33.333%);
+      background: var(--background);
+    }
+  }
+</style>

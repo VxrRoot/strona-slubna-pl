@@ -1,0 +1,22 @@
+---
+const { title, text } = Astro.props;
+---
+
+<div class="card">
+  <div class="card__content">
+    <slot name="icon" />
+    <h4>{title}</h4>
+    <p>{text}</p>
+  </div>
+</div>
+
+<style>
+  .card {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 1px solid var(--primary);
+    min-width: 20rem;
+    min-height: 20rem;
+    background-color: var(--background-dark);
+  }
+</style>

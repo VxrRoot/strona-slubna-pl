@@ -1,0 +1,319 @@
+---
+import CakeIcon from "./icons/CakeIcon.astro";
+import ChurchIcon from "./icons/ChurchIcon.astro";
+import LocalizationIcon from "./icons/LocalizationIcon.astro";
+---
+
+<ol class="step-list w-full">
+  <li class="step-list__item">
+    <div class="step-list__item__inner">
+      <div class="content">
+        <div class="body">
+          <h2>Ślub</h2>
+          <p>Kościół w ustrobnej</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2580.097873421536!2d21.639628899999998!3d49.7089591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473c540dc4fe73cd%3A0xd2f5e675640d780d!2sRC%20KART%20Dmucha%C5%84ce!5e0!3m2!1spl!2spl!4v1713106105043!5m2!1spl!2spl"
+            class="w-full h-[10rem] soft-shadow mt-10 rounded-xl border-primary"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="icon">
+          <ChurchIcon />
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="step-list__item">
+    <div class="step-list__item__inner">
+      <div class="content">
+        <div class="body">
+          <h2>Wesele</h2>
+          <p>Dwa serca, Miejsce Piastowe 321</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2580.097873421536!2d21.639628899999998!3d49.7089591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473c540dc4fe73cd%3A0xd2f5e675640d780d!2sRC%20KART%20Dmucha%C5%84ce!5e0!3m2!1spl!2spl!4v1713106105043!5m2!1spl!2spl"
+            class="w-full h-[10rem] soft-shadow mt-10 rounded-xl border-primary"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="icon">
+          <CakeIcon />
+        </div>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<style lang="scss">
+  @mixin breakpoint($point) {
+    @if $point == big {
+      @media screen and (min-width: 601px) {
+        @content;
+      }
+    } @else if $point == small {
+      @media screen and (max-width: 600px) {
+        @content;
+      }
+    }
+  }
+
+  $connectorHeight: 42px;
+  $connectorBorderWidth: 2px;
+  $connectorBorderColor: #d8d8d8;
+
+  $circleSizeSmall: 76px;
+  $circlePaddingSmall: 9px;
+
+  $circleSizeLarge: 174px;
+  $circlePaddingLarge: 5px;
+
+  .step-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .step-list__item {
+    counter-increment: step-counter;
+    position: relative;
+
+    &:before {
+      content: "";
+      font-weight: 300;
+      color: $connectorBorderColor;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 30px;
+      font-weight: 300;
+    }
+
+    .icon {
+      border-radius: 50%;
+      display: block;
+      flex: 0 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .body {
+      font-size: 20px;
+      line-height: 2rem;
+      font-weight: 300;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &:nth-child(odd) {
+      .content {
+        justify-content: flex-start;
+      }
+    }
+
+    &:nth-child(even) {
+      .content {
+        justify-content: flex-end;
+      }
+    }
+
+    &:first-child {
+      > .step-list__item__inner {
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    &:last-child {
+      > .step-list__item__inner {
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    + li {
+      margin-top: $connectorHeight * 2;
+
+      > div {
+        margin-top: -$connectorBorderWidth;
+      }
+    }
+
+    @include breakpoint(small) {
+      display: flex;
+
+      &:before {
+        content: "";
+        position: relative;
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 300;
+        margin-right: 12px;
+        color: #795449;
+      }
+
+      .icon {
+        order: 0;
+        width: $circleSizeSmall;
+        height: $circleSizeSmall;
+      }
+
+      .body {
+        order: 1;
+        margin-top: 8px;
+        margin-left: 12px;
+      }
+
+      .content {
+        align-items: flex-start;
+
+        &:before {
+          content: "";
+          position: absolute;
+          border-left: $connectorBorderColor;
+          height: 100%;
+          left: 42px;
+          bottom: 0;
+          display: block;
+          width: 1px;
+          background: $connectorBorderColor;
+          top: 72px;
+        }
+      }
+
+      &:last-child {
+        .content {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    @include breakpoint(big) {
+      &:before {
+        content: "";
+        position: absolute;
+        font-size: 90px;
+        line-height: 1;
+        font-weight: 300;
+        color: #d8d8d8;
+      }
+
+      .icon {
+        width: $circleSizeLarge;
+        height: $circleSizeLarge;
+        padding: $circlePaddingLarge;
+      }
+
+      .body {
+        flex: 0 1 33.3333%;
+        margin-top: $connectorHeight / 2;
+        margin-bottom: $connectorHeight / 2;
+        font-size: 2rem;
+      }
+
+      .content {
+        align-items: flex-end;
+        transition: 0.2s;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      > .step-list__item__inner {
+        position: relative;
+
+        &:before,
+        &:after {
+          border-width: 0px;
+          border-style: solid;
+          border-color: #d8d8d8;
+          display: block;
+          content: "";
+          position: absolute;
+          height: $connectorHeight;
+          width: calc(33.3333% - #{$connectorHeight});
+          //filter: drop-shadow(0px 0px 10px $color-primary);
+        }
+      }
+
+      &:nth-child(odd) {
+        > .step-list__item__inner {
+          text-align: right;
+
+          &:before,
+          &:after {
+            border-left-width: $connectorBorderWidth;
+            left: calc(33.3333% - #{$connectorHeight / 2});
+          }
+
+          &:before {
+            border-top-width: $connectorBorderWidth;
+            border-top-left-radius: $connectorHeight;
+            margin-top: -$connectorHeight;
+          }
+
+          &:after {
+            border-bottom-width: $connectorBorderWidth;
+            border-bottom-left-radius: $connectorHeight;
+            margin-bottom: -$connectorHeight;
+          }
+        }
+
+        &:before {
+          left: 0;
+          margin-left: 33.3333%;
+          transform: translateX(-100%);
+        }
+
+        .icon {
+          margin-left: 72px;
+        }
+      }
+
+      &:nth-child(even) {
+        > .step-list__item__inner {
+          &:before,
+          &:after {
+            border-right-width: $connectorBorderWidth;
+            right: calc(33.3333% - #{$connectorHeight / 2});
+          }
+
+          &:before {
+            border-top-width: $connectorBorderWidth;
+            border-top-right-radius: $connectorHeight;
+            margin-top: -$connectorHeight;
+          }
+
+          &:after {
+            border-bottom-width: $connectorBorderWidth;
+            border-bottom-right-radius: $connectorHeight;
+            margin-bottom: -$connectorHeight;
+          }
+        }
+
+        &:before {
+          right: 0;
+          margin-right: 33.3333%;
+          transform: translateX(100%);
+        }
+
+        .icon {
+          margin-right: 72px;
+        }
+
+        .body {
+          order: 1;
+        }
+      }
+    }
+  }
+</style>
