@@ -105,12 +105,12 @@ export default function Nav() {
       >
         <motion.span
           animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
-          className="line-1 bg-white block h-0.5 w-8 bg-content"
+          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
         ></motion.span>
 
         <motion.span
           animate={{ width: toggled ? 0 : 24 }}
-          className="line-2 bg-white block h-0.5 w-6 bg-content"
+          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
         ></motion.span>
         <motion.span
           animate={{
@@ -118,7 +118,7 @@ export default function Nav() {
             y: toggled ? -8 : 0,
             width: toggled ? 32 : 24,
           }}
-          className="line-3 bg-white block h-0.5 w-4 bg-content"
+          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
         ></motion.span>
       </motion.div>
     </nav>
