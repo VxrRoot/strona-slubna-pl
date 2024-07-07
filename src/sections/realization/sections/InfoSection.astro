@@ -2,24 +2,10 @@
 import AstroContainer from "../components/AstroContainer.astro";
 import { FlipWords } from "../components/FlipWords";
 import WineIcon from "../components/icons/WineIcon";
+import DressIcon from "../components/icons/DressIcon";
+import SiteModules from "../components/SiteModules";
 
-const modules = [
-  {
-    name: "Prezenty",
-    desc: "Od kwiatów wolimy napić się dobrego winka",
-    img: WineIcon,
-  },
-  {
-    name: "Dress code",
-    desc: "Przyjdz tak zeby było ci wygodnie i żebyś się dobrze bawił(a) ale nie prosimy nie ubierajcie białych sukni",
-    img: WineIcon,
-  },
-  {
-    name: "Coś tam jeszcze",
-    desc: "Coś tu jeszcze sie wymyśli",
-    img: WineIcon,
-  },
-];
+
 ---
 
 <section class="my-24 lg:my-32">
@@ -29,20 +15,6 @@ const modules = [
       words={["Przed weselem pamiętaj"]}
       client:visible
     />
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-14 w-full"
-    >
-      {
-        modules.map((module) => (
-          <div class="border-2 h-full mx-auto border-primary rounded-t-full min-h-[30rem] pt-32 pb-10 px-10 lg:px-10 max-w-[30rem] w-full flex flex-col text-primary justify-center gap-6 items-center">
-            <WineIcon />
-            <p class="text-5xl text-cormorant  uppercase text-center">
-              {module.name}
-            </p>
-            <p class="text-center text-xl">{module.desc}</p>
-          </div>
-        ))
-      }
-    </div>
+    <SiteModules></SiteModules>
   </AstroContainer>
 </section>

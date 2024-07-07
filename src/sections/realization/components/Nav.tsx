@@ -47,7 +47,7 @@ const NavLinks = ({
         key={id}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
-        className=" text-primary text-center flex justify-center items-center whitespace-nowrap w-20"
+        className={`text-white text-center flex justify-center items-center whitespace-nowrap w-20 ${isMobile?'text-primary':'text-white'}` }
       >
         {name}
       </motion.a>
@@ -58,7 +58,7 @@ const NavLinks = ({
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
   return (
-    <nav className="text-xl  mb-24 flex items-center absolute justify-between w-screen justify-center pb-6 pt-6 font-medium xl:grid grid-cols-3 bg-creme/50 backdrop-blur-md mx-auto text-red-50">
+    <nav className="text-xl  mb-24 flex text-white items-center absolute justify-between w-screen pb-6 pt-6 font-medium xl:grid grid-cols-3 bg-none mx-auto">
       <div className="lg:hidden ml-8">
         <Logo />
       </div>
@@ -105,12 +105,12 @@ export default function Nav() {
       >
         <motion.span
           animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
-          className="line-1 bg-black block h-0.5 w-8 bg-content"
+          className="line-1 bg-white block h-0.5 w-8 bg-content"
         ></motion.span>
 
         <motion.span
           animate={{ width: toggled ? 0 : 24 }}
-          className="line-2 bg-black block h-0.5 w-6 bg-content"
+          className="line-2 bg-white block h-0.5 w-6 bg-content"
         ></motion.span>
         <motion.span
           animate={{
@@ -118,7 +118,7 @@ export default function Nav() {
             y: toggled ? -8 : 0,
             width: toggled ? 32 : 24,
           }}
-          className="line-3 bg-black block h-0.5 w-4 bg-content"
+          className="line-3 bg-white block h-0.5 w-4 bg-content"
         ></motion.span>
       </motion.div>
     </nav>

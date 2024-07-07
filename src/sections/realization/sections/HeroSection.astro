@@ -5,7 +5,7 @@ import { FlipWords } from "../components/FlipWords";
 ---
 
 <section
-  class="bg-cover min-h-screen bg-center bg-[url(/realizacja.webp)] flex flex-col justify-end items-cente"
+  class="bg-cover hero-section h-screen bg-center bg-[url(/realizacja.webp)] flex flex-col justify-end items-cente"
 >
   <div
     class="flex flex-col items-center from-[#6C4E3F] to-white/1 py-[200px] bg-gradient-to-t"
@@ -13,10 +13,10 @@ import { FlipWords } from "../components/FlipWords";
     <AstroContainer>
       <div class="container">
         <div
-          class="absolute top-1/2 left-1/2 w-100 -translate-x-1/2 -translate-y-[60px] text-center"
+          class="absolute top-1/2 left-1/2 w-100 -translate-x-1/2 translate-y-[60px] text-center overflow-hidden"
         >
           <FlipWords
-            className="text-4xl px-4 text-white lg:text-5xl w-full text-center mb-16"
+            className="text-4xl px-4 h-[5rem] text-white lg:text-5xl text-center mb-8 w-screen"
             words={[
               "Jak pewnie już wiesz bierzemy ślub",
               "Liczymy na twoją obecność",
@@ -30,3 +30,11 @@ import { FlipWords } from "../components/FlipWords";
     </AstroContainer>
   </div>
 </section>
+
+<style lang="scss">
+  .hero-section {
+    background-image: linear-gradient(#422f25,transparent 20%,transparent 50%, var(--primary)),
+      url("realizacja.webp");
+    background-position: bottom;
+  }
+</style>
