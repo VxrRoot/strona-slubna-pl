@@ -36,15 +36,18 @@ const NavLinks = ({
   isMobile,
   className,
   items,
+  onClick,
 }: {
   isMobile: boolean;
   className: string;
+  onClick?: () => void;
   items: any[];
 }) => (
   <div className={className}>
     {items.map(({ name, href, id }) => (
       <motion.a
         key={id}
+        onClick={onClick}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
         className={`text-white text-center flex justify-center items-center whitespace-nowrap w-20 ${
@@ -76,6 +79,7 @@ export default function Nav() {
           <NavLinks
             className="flex flex-col gap-24 text-lg "
             items={navLinks}
+            onClick={() => setToggled((prev) => !prev)}
             isMobile={true}
           />
           <NavLinks

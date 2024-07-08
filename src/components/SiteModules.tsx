@@ -11,37 +11,37 @@ const modules = [
   {
     name: "Licznik",
     desc: "Licznik odlicza czas do wielkiego dnia, dodając emocji i budując napięcie przed zbliżającym się ślubem. Wyświetla dni, godziny, minuty i sekundy pozostałe do ceremonii",
-    link: "/licznik",
+    link: "/realizacja",
     img: <Timer className="w-12 h-12" />,
   },
   {
     name: "Przewodnik gościa",
     desc: "Kompleksowa sekcja zawierająca wszystkie niezbędne informacje dla uczestników ślubu.",
-    link: "/licznik",
+    link: "/realizacja#przewodnik-goscia",
     img: <BookOpenText className="w-12 h-12" />,
   },
   {
     name: "Wiadomość do gości",
     desc: "Funkcja ta pozwala parze młodej na komunikowanie się ze swoimi gośćmi. Można zamieścić osobiste powitanie, podziękowania oraz wszelkie ważne aktualizacje dotyczące ślubu i przyjęcia",
-    link: "/licznik",
+    link: "/realizacja#wiadomosc-do-gosci",
     img: <Send className="w-12 h-12" />,
   },
   {
     name: "Lokalizacje",
     desc: "Szczegółowe informacje o wszystkich miejscach związanych ze ślubem i przyjęciem. Adresy, mapy, wskazówki dojazdu oraz opcje parkingowe są tutaj przedstawione w przejrzysty sposób, ułatwiając gościom dotarcie na czas",
-    link: "/licznik",
+    link: "/realizacja#lokalizacja",
     img: <MapPin className="w-12 h-12" />,
   },
   {
     name: "Zdjęcia",
     desc: "Jest to sekcja w której para młoda może dzielić się pięknymi zdjęciami z sesji narzeczeńskiej, zdjęciami z przygotowań do ślubu oraz innymi ważnymi momentami",
-    link: "/licznik",
+    link: "/realizacja#zdjecia",
     img: <Image className="w-12 h-12" />,
   },
   {
     name: "Potwierdzenie przybycia",
     desc: "Umożliwia gościom łatwe i szybkie potwierdzenie ich obecności na ślubie. Goście mogą wypełnić prosty formularz online, co pomaga parze młodej w dokładnym zaplanowaniu uroczystości i przyjęcia ",
-    link: "/licznik",
+    link: "/realizacja#obecnosc",
     img: <SquareCheckBig className="w-12 h-12" />,
   },
 ];
@@ -60,7 +60,7 @@ const SiteModules = () => {
             className="bg-primary font-semibold px-8 py-4 text-white w-full text-center mt-auto"
             href={module.link}
           >
-            Czytaj więcej
+            Sprawdź
           </a>
         </div>
       ))}
