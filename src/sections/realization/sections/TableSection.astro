@@ -1,0 +1,122 @@
+---
+import AstroContainer from "../components/AstroContainer.astro";
+import { FlipWords } from "../components/FlipWords";
+const tableData = [
+  {
+    tableNumber: 1,
+    tableList: [
+      "Anna Kowalska",
+      "Maria Nowak",
+      "Kasia Zielińska",
+      "Zofia Wiśniewska",
+      "Agnieszka Wojciechowska",
+      "Jan Kowalczyk",
+      "Andrzej Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+    ],
+  },
+  {
+    tableNumber: 2,
+    tableList: [
+      "Agnieszka Nowak",
+      "Kasia Zielińska",
+      "Zofia Wiśniewska",
+      "Anna Kowalczyk",
+      "Maria Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+      "Jan Kowalska",
+      "Andrzej Wojciechowska",
+    ],
+  },
+  {
+    tableNumber: 3,
+    tableList: [
+      "Kasia Zielińska",
+      "Zofia Wiśniewska",
+      "Anna Kowalczyk",
+      "Maria Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+      "Jan Kowalska",
+      "Andrzej Wojciechowska",
+      "Agnieszka Nowak",
+    ],
+  },
+  {
+    tableNumber: 4,
+    tableList: [
+      "Zofia Wiśniewska",
+      "Anna Kowalczyk",
+      "Maria Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+      "Jan Kowalska",
+      "Andrzej Wojciechowska",
+      "Agnieszka Nowak",
+      "Kasia Zielińska",
+    ],
+  },
+  {
+    tableNumber: 5,
+    tableList: [
+      "Anna Kowalczyk",
+      "Maria Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+      "Jan Kowalska",
+      "Andrzej Wojciechowska",
+      "Agnieszka Nowak",
+      "Kasia Zielińska",
+      "Zofia Wiśniewska",
+    ],
+  },
+  {
+    tableNumber: 6,
+    tableList: [
+      "Maria Zieliński",
+      "Krzysztof Wójcik",
+      "Marek Górski",
+      "Piotr Szczurkiewicz",
+      "Jan Kowalska",
+      "Andrzej Wojciechowska",
+      "Agnieszka Nowak",
+      "Kasia Zielińska",
+      "Zofia Wiśniewska",
+      "Anna Kowalczyk",
+    ],
+  },
+];
+---
+
+<section class="mt-24 py-20 lg:my-32" id="stoliki">
+  <AstroContainer>
+    <FlipWords
+      className="text-4xl px-4 lg:text-5xl w-full text-left uppercase font-bold mb-16 text-primary"
+      words={["Podział na stoliki"]}
+      client:visible
+    />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {
+        tableData.map((table) => (
+          <div class="flex justify-center flex-col">
+            <span class="text-5xl mb-10 pb-4 border-b border-b-primary">
+              {table.tableNumber}
+            </span>
+            <ul>
+              {table.tableList.map((item) => (
+                <li class="text-xl">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </AstroContainer>
+</section>

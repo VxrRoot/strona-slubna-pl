@@ -1,11 +1,4 @@
-import {
-  BookOpenText,
-  MapPin,
-  Send,
-  Image,
-  SquareCheckBig,
-  Timer,
-} from "lucide-react";
+import { Car, BedDouble, Image } from "lucide-react";
 import DressIcon from "./icons/DressIcon";
 import WineIcon from "./icons/WineIcon";
 import KidIcon from "./icons/KidIcon";
@@ -14,17 +7,32 @@ const modules = [
   {
     name: "Prezenty",
     desc: "Od kwiatów wolimy napić się dobrego winka",
-    img: <WineIcon/>,
+    img: <WineIcon />,
   },
   {
     name: "Dress code",
     desc: "Przyjdz tak zeby było ci wygodnie i żebyś się dobrze bawił(a) ale nie prosimy nie ubierajcie białych sukni",
-    img: <DressIcon/>,
+    img: <DressIcon />,
   },
   {
     name: "Zabawy dla dzieci",
     desc: "Dla najmłodszych pociech przygotowaliśmy animatorów którzy zajmą się dziecmi.",
-    img: <KidIcon/>,
+    img: <KidIcon />,
+  },
+  {
+    name: "Kierowca",
+    desc: "Po imprezie zapewniamy kierowcę który bezpiecznie odwiezie Cię do domu",
+    img: <Car className="w-[5rem] h-auto" />,
+  },
+  {
+    name: "Nocleg",
+    desc: "Dla gości weselnych, którzy chcieliby zostać na noc w lokalu po zakończeniu imprezy, zapewniamy wygodne opcje zakwaterowania.",
+    img: <BedDouble className="w-[5rem] h-auto" />,
+  },
+  {
+    name: "Zdjęcia",
+    desc: "Zachęcamy Was do uchwycenia najpiękniejszych chwil z naszego wesela i dzielenia się nimi z nami! Wasze zdjęcia będą dla nas wspaniałą pamiątką.",
+    img: <Image className="w-[5rem] h-auto" />,
   },
 ];
 

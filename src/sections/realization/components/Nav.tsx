@@ -24,12 +24,12 @@ const itemMotionDesktop = {
   hidden: { opacity: 1, x: 0 },
 };
 const navLinks = [
-  { name: "Kiedy?", href: "/", id: 1 },
-  { name: "Jak dojechać?", href: "/", id: 2 },
+  { name: "Kiedy?", href: "/realizacja", id: 1 },
+  { name: "Jak dojechać?", href: "#lokalizacja", id: 2 },
 ];
 const navLinks2 = [
-  { name: "Stoliki", href: "/", id: 2 },
-  { name: "Obecność", href: "/", id: 3 },
+  { name: "Stoliki", href: "#stoliki", id: 2 },
+  { name: "Obecność", href: "#obecnosc", id: 3 },
 ];
 
 const NavLinks = ({
@@ -47,7 +47,9 @@ const NavLinks = ({
         key={id}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
-        className={`text-white text-center flex justify-center items-center whitespace-nowrap w-20 ${isMobile?'text-primary':'text-white'}` }
+        className={`text-white text-center flex justify-center items-center whitespace-nowrap w-20 ${
+          isMobile ? "text-primary" : "text-white"
+        }`}
       >
         {name}
       </motion.a>
@@ -105,12 +107,16 @@ export default function Nav() {
       >
         <motion.span
           animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
-          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
+          className={`line-1 ${
+            toggled ? "bg-primary" : "bg-white"
+          } block h-0.5 w-8 bg-content`}
         ></motion.span>
 
         <motion.span
           animate={{ width: toggled ? 0 : 24 }}
-          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
+          className={`line-1 ${
+            toggled ? "bg-primary" : "bg-white"
+          } block h-0.5 w-8 bg-content`}
         ></motion.span>
         <motion.span
           animate={{
@@ -118,7 +124,9 @@ export default function Nav() {
             y: toggled ? -8 : 0,
             width: toggled ? 32 : 24,
           }}
-          className={`line-1 ${toggled ? 'bg-primary' : 'bg-white'} block h-0.5 w-8 bg-content`}
+          className={`line-1 ${
+            toggled ? "bg-primary" : "bg-white"
+          } block h-0.5 w-8 bg-content`}
         ></motion.span>
       </motion.div>
     </nav>
