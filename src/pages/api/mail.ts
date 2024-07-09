@@ -106,7 +106,7 @@ export const POST: APIRoute = async ({ request }) => {
                   
                   <a target="_blank" style="text-decoration: none;"
                       href="https://www.strona-slubna.pl/"><img height="60px" width="auto" border="0" vspace="0" hspace="0"
-                      src="https://www.strona-slubna.pl/LOGO.svg"
+                      src="https://www.strona-slubna.pl/LOGO.png"
                       width="150" height="50"
                       alt="Logo" title="Logo" style="
                       color: #6c4e3f;
