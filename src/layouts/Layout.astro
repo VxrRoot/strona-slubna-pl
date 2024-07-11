@@ -32,6 +32,8 @@ const {
     <meta name="keywords" content={keywords} />
     <meta name="robots" content={robots} />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="alternate" hreflang="pl" href={url} />
+    <link rel="alternate" href={url} />
 
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={url} />
@@ -41,11 +43,13 @@ const {
     <meta property="og:type" content={title} />
     <meta property="og:url" content={url} />
     <meta property="og:image" content={`${url}/hero-img.webp`} />
+    <meta property="og:image:alt" content="Strona Slubna" />
     <meta
       name="google-site-verification"
       content="nt_AD7zouk3DZz90GzlZwlw3Ppefx-zn3g4VpVaT8f4"
     />
     <title>{title}</title>
+    <meta property="og:locale" content="pl" />
   </head>
   <body>
     <Header bgDark={headerDark} />
