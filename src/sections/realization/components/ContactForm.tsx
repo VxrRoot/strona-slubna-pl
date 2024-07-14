@@ -50,7 +50,7 @@ const ContactForm = () => {
     });
 
     if (response.status === 200) {
-      window.location.href = "/thanks";
+      window.location.href = "/dziekujemy";
     }
   };
 
