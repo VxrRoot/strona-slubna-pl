@@ -28,16 +28,19 @@ const navLinks = [
   { name: "O nas", href: "/#o-nas", id: 1 },
   { name: "Oferta", href: "/#oferta", id: 2 },
   { name: "Kontakt", href: "/#kontakt", id: 3 },
+  { name: "Blog", href: "/blog", id: 4 },
 ];
 
 const NavLinks = ({
   isMobile,
   onClick,
   className,
+  isDark,
 }: {
   isMobile: boolean;
   className: string;
   onClick?: () => void;
+  isDark?: boolean;
 }) => (
   <div className={className}>
     {navLinks.map(({ name, href, id }) => (
@@ -46,28 +49,30 @@ const NavLinks = ({
         onClick={onClick}
         variants={isMobile ? itemMotion : itemMotionDesktop}
         href={href}
-        className="text-center text-primary text-cormorant text-xl flex justify-center items-center whitespace-nowrap "
+        className={`text-center text-cormorant text-xl flex justify-center items-center whitespace-nowrap ${
+          isDark ? "lg:text-white" : "text-primary"
+        }`}
       >
         {name}
       </motion.a>
     ))}
     <div className="flex gap-8">
       <a href="https://www.instagram.com/strona_slubna/">
-        <InstagramIcon fill="#6c4e3f" />
+        <InstagramIcon fill={isDark ? "#ffffff" : "#6c4e3f"} />
       </a>
       <a href="https://www.tiktok.com/@strona_slubna?lang=pl-PL">
-        <TiktokIcon fill="#6c4e3f" />
+        <TiktokIcon fill={isDark ? "#ffffff" : "#6c4e3f"} />
       </a>
     </div>
   </div>
 );
 
-export default function Nav() {
+export default function Nav({ isDark }: { isDark: boolean }) {
   const [toggled, setToggled] = useState(false);
   return (
     <nav className="relative   flex items-center justify-between  font-medium  max-w-[1440px] mx-auto">
       <div className="hidden xl:flex xl:items-center  xl:justify-center xl:gap-12 xl:text-lg  xl:ml-auto ">
-        <NavLinks className="flex gap-12" isMobile={false} />
+        <NavLinks className="flex gap-12" isMobile={false} isDark={isDark} />
       </div>
 
       {toggled && (
@@ -97,11 +102,15 @@ export default function Nav() {
       >
         <motion.span
           animate={{ rotateZ: toggled ? 45 : 0, y: toggled ? 8 : 0 }}
-          className="line-1 bg-primary block h-0.5 w-8 bg-content"
+          className={`line-1  block h-0.5 w-8 bg-content ${
+            isDark && !toggled ? "bg-white" : "bg-primary"
+          }`}
         />
         <motion.span
           animate={{ width: toggled ? 0 : 24 }}
-          className="line-2 bg-primary block h-0.5 w-6 bg-content"
+          className={`line-2  block h-0.5 w-6 bg-content ${
+            isDark && !toggled ? "bg-white" : "bg-primary"
+          }`}
         />
         <motion.span
           animate={{
@@ -109,7 +118,9 @@ export default function Nav() {
             y: toggled ? -8 : 0,
             width: toggled ? 32 : 24,
           }}
-          className="line-3 bg-primary block h-0.5 w-4 bg-content"
+          className={`line-3  block h-0.5 w-4 bg-content ${
+            isDark && !toggled ? "bg-white" : "bg-primary"
+          }`}
         />
       </motion.div>
     </nav>

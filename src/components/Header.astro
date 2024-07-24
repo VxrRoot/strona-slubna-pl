@@ -10,16 +10,14 @@ interface Props {
 const { bgDark = false } = Astro.props;
 ---
 
-<header
-  class=`absolute w-full flex justify-center py-4 h-20 ${bgDark && 'bg-creme/50'}  ${bgDark && 'backdrop-blur-md'}`
->
+<header class=`absolute w-full flex justify-center py-4 h-20  `>
   <AstroContainer>
     <div class="relative">
       <a href="/" class="absolute left-1/2 -translate-x-1/2">
-        <Logo />
+        <Logo fill={bgDark ? "#FFFFFF" : "#6C4E3F"} />
       </a>
       <div class="absolute right-0 top-3 z-40">
-        <Nav client:load />
+        <Nav client:load isDark={bgDark} />
       </div>
     </div>
   </AstroContainer>
